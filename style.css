@@ -1,0 +1,93 @@
+/***** Universal styling *****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***** Body styling *****/
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #f5f5f5;
+}
+
+/* Header styling */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #444;
+  padding: 20px 0;
+  border-bottom: 3px solid #82b1ff;
+  z-index: 1000;
+}
+
+/* Nav bar */
+.sticky-nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.sticky-nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.sticky-nav ul li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Intro section styling */
+.intro-section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-picture {
+  flex: 1;
+}
+
+.profile-picture img {
+  max-width: 100%;
+  height: auto;
+}
+
+.intro-text {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.intro-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/***** Footer styling *****/
+.footer {
+  background-color: #444;
+  color: #f5f5f5;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 3px solid #82b1ff;
+}
