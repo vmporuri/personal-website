@@ -7,12 +7,13 @@
 
 /***** Body styling *****/
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #222;
   color: #f5f5f5;
+  overflow-x: hidden;
 }
 
-/* Header styling */
+/***** Header styling *****/
 .header {
   position: sticky;
   top: 0;
@@ -25,7 +26,8 @@ body {
 /* Nav bar */
 .sticky-nav ul {
   list-style: none;
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .sticky-nav ul li {
@@ -34,15 +36,20 @@ body {
 }
 
 .sticky-nav ul li a {
+  font-family: "Lato", sans-serif;
   color: #f5f5f5;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
+.sticky-nav ul li a:hover {
+  background-color: #5586ff;
+}
+
 /* Intro section styling */
 .intro-section {
-  padding: 100px 0;
+  padding: 50px 0;
   text-align: center;
 }
 
@@ -55,16 +62,27 @@ body {
 .intro-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .profile-picture {
-  flex: 1;
+  flex: 0 0 auto;
+  margin-right: 5%;
+}
+
+.profile-picture-inner {
+  background-color: #444;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
 }
 
 .profile-picture img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  vertical-align: bottom;
 }
 
 .intro-text {
@@ -73,14 +91,30 @@ body {
 }
 
 .intro-text h1 {
-  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
 .intro-text p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-link {
+  color: #82b1ff;
+  font-size: 36px;
+  margin: 0 10px;
+}
+
+.icon-link:hover {
+  color: #5586ff;
 }
 
 /***** Footer styling *****/
