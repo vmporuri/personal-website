@@ -40,6 +40,15 @@ nav.sticky-nav ul {
   list-style: none;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+}
+
+nav.sticky-nav img {
+  width: 2em;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 20px;
+  vertical-align: middle;
 }
 
 nav.sticky-nav ul li {
@@ -95,14 +104,14 @@ nav.sticky-nav ul li a:hover {
 
 .intro-content {
   display: flex;
-  flex-direction: column; /* Change to column for smaller screens */
-  align-items: center; /* Center-align items horizontally */
-  justify-content: center; /* Center-align items vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-picture {
   flex: 0 0 auto;
-  margin-bottom: 20px; /* Add space between image and text */
+  margin-bottom: 20px;
 }
 
 .profile-picture-inner {
@@ -120,20 +129,20 @@ nav.sticky-nav ul li a:hover {
 
 .intro-text {
   padding: 20px 20px;
-  text-align: center; /* Center-align text */
-  align-self: center; /* Vertically center text within parent */
+  text-align: center;
+  align-self: center;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  margin-top: 20px; /* Add space between text and social icons */
+  margin-top: 20px;
 }
 
 .icon-link {
   color: #82b1ff;
-  font-size: 24px; /* Increase size of icons on smaller screens */
-  margin: 0 5px; /* Reduce margin for smaller screens */
+  font-size: 24px;
+  margin: 0 5px;
 }
 
 .icon-link:hover {
@@ -142,22 +151,22 @@ nav.sticky-nav ul li a:hover {
 
 @media screen and (min-width: 768px) {
   .intro-content {
-    flex-direction: row; /* Change to row for larger screens */
-    align-items: flex-start; /* Align items at the top */
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .profile-picture {
-    margin-bottom: 0; /* Remove margin for better alignment */
-    margin-right: 5%; /* Add space between image and text */
+    margin-bottom: 0;
+    margin-right: 5%;
   }
 
   .icon-link {
-    font-size: 36px; /* Maintain size of icons on larger screens */
+    font-size: 36px;
   }
 
   .intro-text {
-    flex: 1; /* Take up remaining space */
-    align-self: center; /* Vertically center text */
+    flex: 1;
+    align-self: center;
   }
 }
 
