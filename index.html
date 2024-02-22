@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Venu Poruri</title>
+    <meta name="description" content="Venu Poruri's personal website." />
+    <title>Home | Venu Poruri</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
@@ -15,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
+
   <body>
     <header class="header">
       <nav class="sticky-nav">
@@ -37,10 +39,10 @@
             <h1>Hi, I'm Venu Poruri!</h1>
             <p>
               Hello there! My name is Venu Poruri. I'm a junior studying
-              Mathematics and Computer Science and UC Berkeley. I'm very
+              Mathematics and Computer Science at UC Berkeley. I'm very
               interested in software engineering, data science, machine
-              learning, and computer security. Keep scrolling to learn more
-              about me!
+              learning, and cybersecurity. Keep scrolling to learn more about
+              me!
             </p>
 
             <div class="social-icons">
@@ -57,6 +59,80 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-header">
+        <h1>About Me</h1>
+      </div>
+      <div class="about-columns">
+        <div class="about-item">
+          <img
+            src="https://www.svgrepo.com/show/240557/violin.svg"
+            alt="Violin Image"
+          />
+          <h2>Violin</h2>
+          <p>
+            I've played the violin for 7 years (and the piano for 6). My
+            favorite piece is Jean-Baptiste Accolay's Concerto No. 1 in A Minor
+            (see Perlman's wonderful performance
+            <a href="https://www.youtube.com/watch?v=ggMPSbSyynY">here</a>. I've
+            even written a few (very short) compositions of my own and performed
+            in a friend's short film! Music has always been my sanctuary,
+            allowing me to express myself freely and connect with others.
+          </p>
+        </div>
+        <div class="about-item">
+          <img
+            src="https://www.svgrepo.com/show/499965/chess.svg"
+            alt="Chess Image"
+          />
+          <h2>Chess</h2>
+          <p>
+            Chess is a hobby I've picked up more recently. I started playing at
+            the start of the pandemic in 2020. Back then, I was only rated 600
+            elo. After playing countles games and solving a seemingly endless
+            number of puzzles, I'm proud to say I've climbed the ranks since
+            then. I'm now rated 1800 on Lichess. Feel free to reach out if you'd
+            like to play a game!
+          </p>
+        </div>
+        <div class="about-item">
+          <img
+            src="https://www.svgrepo.com/show/406565/martial-arts-uniform.svg"
+            alt="Taekwondo Image"
+          />
+          <h2>Taekwondo</h2>
+          <p>
+            My go-to conversation starter is always that I have a 3rd degree
+            black belt in Taekwondo, a pursuit that I've poured well over a
+            decade of my life into. I credit this lifelong journey with teaching
+            me discipline and perseverence. Beyond personal achievements, I also
+            really enjoy teaching newcomers to the sport. I volunteer to teach
+            at my local studio every Saturday.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h1>Contact Me</h1>
+      <p>Feel free to contact me using the form below:</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
     </section>
 
     <footer class="footer">
