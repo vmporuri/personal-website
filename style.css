@@ -95,13 +95,14 @@ nav.sticky-nav ul li a:hover {
 
 .intro-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; /* Change to column for smaller screens */
+  align-items: center; /* Center-align items horizontally */
+  justify-content: center; /* Center-align items vertically */
 }
 
 .profile-picture {
   flex: 0 0 auto;
-  margin-right: 5%;
+  margin-bottom: 20px; /* Add space between image and text */
 }
 
 .profile-picture-inner {
@@ -109,8 +110,6 @@ nav.sticky-nav ul li a:hover {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
-  margin: 0;
-  padding: 0;
 }
 
 .profile-picture img {
@@ -120,23 +119,46 @@ nav.sticky-nav ul li a:hover {
 }
 
 .intro-text {
-  flex: 1;
-  padding: 0 20px;
+  padding: 20px 20px;
+  text-align: center; /* Center-align text */
+  align-self: center; /* Vertically center text within parent */
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
+  margin-top: 20px; /* Add space between text and social icons */
 }
 
 .icon-link {
   color: #82b1ff;
-  font-size: 36px;
-  margin: 0 10px;
+  font-size: 24px; /* Increase size of icons on smaller screens */
+  margin: 0 5px; /* Reduce margin for smaller screens */
 }
 
 .icon-link:hover {
   color: #5586ff;
+}
+
+@media screen and (min-width: 768px) {
+  .intro-content {
+    flex-direction: row; /* Change to row for larger screens */
+    align-items: flex-start; /* Align items at the top */
+  }
+
+  .profile-picture {
+    margin-bottom: 0; /* Remove margin for better alignment */
+    margin-right: 5%; /* Add space between image and text */
+  }
+
+  .icon-link {
+    font-size: 36px; /* Maintain size of icons on larger screens */
+  }
+
+  .intro-text {
+    flex: 1; /* Take up remaining space */
+    align-self: center; /* Vertically center text */
+  }
 }
 
 /* About me styling */
