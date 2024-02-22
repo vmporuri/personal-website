@@ -157,23 +157,24 @@ nav.sticky-nav ul li a:hover {
 
 .about-columns {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 80%;
 }
 
 .about-item {
-  flex: 1 1 33.33%;
-  margin-right: 20px;
+  flex: 1 0 300px;
+  margin-bottom: 20px;
   background-color: #555;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   border: 3px solid #666;
+  box-sizing: border-box;
 }
 
 .about-item:last-child {
-  padding: 20px;
-  margin-right: 20px;
+  margin-right: 0;
 }
 
 .about-item img {
@@ -197,12 +198,29 @@ nav.sticky-nav ul li a:hover {
 .about-item p a {
   color: #5586ff;
 }
+
 .about-item p a:active {
   color: #5586ff;
 }
+
 .about-item p a:focus {
   color: #5586ff;
   outline: none;
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+  .about-columns {
+    justify-content: flex-start;
+  }
+
+  .about-item {
+    margin-right: 20px;
+  }
+
+  .about-item:last-child {
+    margin-right: 0;
+  }
 }
 
 /* Contact me styling */
