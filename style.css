@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/***** Body styling *****/
+/* Body styling */
 body {
   font-family: "Roboto", sans-serif;
   background-color: #222;
@@ -13,7 +13,19 @@ body {
   overflow-x: hidden;
 }
 
-/***** Header styling *****/
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Header styling */
 .header {
   position: sticky;
   top: 0;
@@ -47,6 +59,22 @@ nav.sticky-nav ul li a:hover {
   background-color: #5586ff;
 }
 
+/* Footer styling */
+.footer {
+  background-color: #444;
+  color: #f5f5f5;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 3px solid #82b1ff;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+/***** Home page styling *****/
 /* Intro section styling */
 .intro-section {
   display: flex;
@@ -96,18 +124,6 @@ nav.sticky-nav ul li a:hover {
   padding: 0 20px;
 }
 
-.intro-text h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.intro-text p {
-  font-size: 20px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
 .social-icons {
   display: flex;
   justify-content: center;
@@ -123,7 +139,7 @@ nav.sticky-nav ul li a:hover {
   color: #5586ff;
 }
 
-/***** About me styling *****/
+/* About me styling */
 .about-section {
   display: flex;
   flex-direction: column;
@@ -189,7 +205,7 @@ nav.sticky-nav ul li a:hover {
   outline: none;
 }
 
-/***** Contact me styling *****/
+/* Contact me styling */
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -244,11 +260,34 @@ nav.sticky-nav ul li a:hover {
   background-color: #5586ff;
 }
 
-/***** Footer styling *****/
-.footer {
-  background-color: #444;
-  color: #f5f5f5;
-  padding: 20px 0;
+/***** Travel photos styling *****/
+.slideshow h1 {
+  padding-top: 30px;
   text-align: center;
-  border-top: 3px solid #82b1ff;
+}
+
+.image-gallery {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+
+.image-gallery > li {
+  width: 33.33%;
+  margin: 10px;
+}
+
+.image-gallery li img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.image-gallery li p {
+  text-align: center;
+  margin-top: 5px;
 }
