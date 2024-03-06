@@ -1,22 +1,29 @@
-// Slideshow
-slideIndex = 0;
-showSlides(slideIndex);
+// Slideshow handling
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
 
-function plusSlide(n) {
-  showSlides((slideIndex += n));
+function fetchSlideIndex() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      slideIndex = parseInt(this.responseText);
+      showSlides(slideIndex);
+    }
+  };
+  xhttp.open("GET", "/slide-index", true);
+  xhttp.send();
+}
+
+function updateSlideIndex(newIndex) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "/update-slide-index", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.send(JSON.stringify({ slideIndex: newIndex }));
 }
 
 function showSlides(n) {
-  let i;
-  const slides = document.getElementsByClassName("slide");
-  if (n >= slides.length) {
-    slideIndex = 0;
-  }
-  if (n < 0) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    if (i == slideIndex) {
+  for (let i = 0; i < slides.length; i++) {
+    if (i === n) {
       slides[i].style.display = "block";
     } else {
       slides[i].style.display = "none";
@@ -25,21 +32,32 @@ function showSlides(n) {
 }
 
 function prevSlide() {
-  plusSlide(-1);
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  }
+  showSlides(slideIndex);
+  updateSlideIndex(slideIndex);
 }
 
 function nextSlide() {
-  plusSlide(1);
+  slideIndex++;
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+  showSlides(slideIndex);
+  updateSlideIndex(slideIndex);
 }
 
-// Cookies
+fetchSlideIndex();
+
+// Cookie handling
 function setCookie(name, value, days) {
   const expires = new Date();
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=None;Secure`;
 }
 
-// Function to get a cookie by name
 function getCookie(name) {
   const cookies = document.cookie.split(";");
   for (let cookie of cookies) {
@@ -51,18 +69,15 @@ function getCookie(name) {
   return null;
 }
 
-// Function to fill in text fields with saved data
 function fillInTextFields() {
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const messageInput = document.getElementById("message");
 
-  // Get saved contact info from cookies
   const savedName = getCookie("contact_name");
   const savedEmail = getCookie("contact_email");
   const savedMessage = getCookie("contact_message");
 
-  // Fill in text fields with saved data
   if (savedName) nameInput.value = savedName;
   if (savedEmail) emailInput.value = savedEmail;
   if (savedMessage) messageInput.value = savedMessage;
@@ -76,9 +91,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const message = document.getElementById("message").value;
-      setCookie("contact_name", name, 7); // Save name for 7 days
-      setCookie("contact_email", email, 7); // Save email for 7 days
-      setCookie("contact_message", message, 7); // Save message for 7 days
+      setCookie("contact_name", name, 7);
+      setCookie("contact_email", email, 7);
+      setCookie("contact_message", message, 7);
     });
   }
 });
