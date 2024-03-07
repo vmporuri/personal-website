@@ -97,3 +97,23 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 });
+
+// Weather handling
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("/latest-weather");
+    const data = await response.json();
+    const temperature = data.temperature;
+    updateWeather(temperature);
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    updateWeather("N/A");
+  }
+});
+
+function updateWeather(temperature) {
+  const weatherElement = document.getElementById("weather");
+  if (weatherElement) {
+    weatherElement.textContent = `${temperature}°F`;
+  }
+}
