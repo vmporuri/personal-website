@@ -34,7 +34,7 @@ app.post("/update-slide-index", (req, res) => {
 });
 
 // Handle weather get requests using OpenWeatherMap API
-const API_KEY = "ec2f31a061502f05972ec41cdd00964f";
+const API_KEY = ""; // Please input your own API key here!
 const CITY = "Berkeley";
 const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}`;
 
